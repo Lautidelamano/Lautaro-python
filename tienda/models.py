@@ -7,4 +7,4 @@ class autos (models.Model):
     precio = models.IntegerField()
 
     def __str__(self) -> str:
-        return self.marca
+        return self.marca 
