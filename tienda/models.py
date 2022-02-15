@@ -1,10 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class autos (models.Model):
-    marca = models.CharField(max_length=20)
-    descrip = models.CharField(max_length=150)
+class Productos (models.Model):
+    nombre = models.CharField(max_length=20)
     precio = models.IntegerField()
+    cantidad = models.IntegerField()
 
     def __str__(self) -> str:
-        return self.marca 
+        return self.nombre 

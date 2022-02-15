@@ -1,4 +1,8 @@
 from django import forms
+from .models import Productos
 
-class formulario(forms.Form):
-    Elemento  = forms.CharField()
+class formulario(forms.ModelForm):
+
+    class Meta:
+        model = Productos
+        fields = ['nombre', 'precio', 'cantidad']

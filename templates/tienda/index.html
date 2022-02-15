@@ -13,12 +13,30 @@
 {% block texto %}
 
     <div class='comentarioDos'>
-        <h2>Lista de autos</h2>
-        <ul>
-            {% for elementos in lista  %}
-            <li>{{elementos}}</li>
-            {% endfor %}
-        </ul>
+        <div class="container">
+            <h2>Listado de productos</h2>
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Precio</th>
+                  <th>Cantidad</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              {% for elementos in productos %}
+              <tbody>
+                <tr>
+                  <td>{{elementos.nombre}}</td>
+                  <td>{{elementos.precio}}</td>
+                  <td>{{elementos.cantidad}}</td>
+                  <td><button class="btn btn-primary bg-danger border-dark"><a class="text-white" href="{% url 'eliminar' elementos.id %}">Eliminar</a></button></td>
+                </tr>
+                <tr>
+              </tbody>
+              {% endfor %}
+            </table>
+          </div>
         <a class="btn btn-primary mt-2 text-white" href="{% url 'agregar' %}">Publicar</a>
     </div>
 
