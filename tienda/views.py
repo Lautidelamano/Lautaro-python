@@ -27,4 +27,5 @@ def agregar(request):
 def eliminar(request, productos_id):
     productos = Productos.objects.get(id=productos_id)
     productos.delete()
-    return redirect(index)
+    
+    return redirect(index) 
