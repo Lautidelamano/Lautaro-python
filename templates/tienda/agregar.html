@@ -1,0 +1,40 @@
+
+{% extends 'tienda/index.html' %}
+
+{% block texto %}
+{% comment %} <div class='base_form'>
+    <fieldset class='cuadro'>
+        <h2>Agregar nuevo elemento a la lista</h2>
+        <form method='post'>
+                {% csrf_token %}
+                {{form}}
+                <button>Enviar</button>
+                <a href="{% url 'index' %}">Volver</a>
+        </form>
+    </fieldset>
+</div> {% endcomment %}
+
+<div class="container-fluid w-50">
+    <h2 class="">Datos</h2>
+    <form action="/action_page.php">
+      <div class="form-group">
+        <label for="marca">Marca:</label>
+        <input type="string" class="form-control" id="email" placeholder="Ingrese marca" name="marca">
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripcion:</label>
+        <input type="string" class="form-control" id="pwd" placeholder="Ingrese descripcion del vehiculo" name="desc">
+      </div>
+      <div>
+        <label for="precio">Precio:</label>
+        <input type="integer" class="form-control" id="pwd" placeholder="Ingrese precio del vehiculo" name="desc">
+      </div>
+    <div class="conteiner-fluid">
+      <button type="submit" class="btn btn-primary mt-2">Registrar</button>
+    </form>
+    <a class="btn btn-primary mt-2 volver" href="{% url 'index' %}">Volver</a>
+    </div>
+</div>
+
+{% endblock %}
+
