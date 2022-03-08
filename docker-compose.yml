@@ -1,0 +1,22 @@
+version: "3.8"                             ##version de docker compose
+
+services:
+  db:                                      ##nombre 
+    image: postgres             ##nombre de la imagen a ejecutar
+    restart: always             ##Que se vuelva a ejecutar si hay una falla
+    ports:
+      - "5432:5432"             ##Puerto en el que se va a ejecutar
+    environment:
+      - DATABASE_HOST=127.0.0.1          ##LocalHost
+      - POSTGRES_USER=admin                     ##usuario y contraseña
+      - POSTGRES_PASSWORD=admin
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:80
+    volumes:
+      - .:/code
+    ports:
+      - "80:80"
+    depends_on:
+      - db
