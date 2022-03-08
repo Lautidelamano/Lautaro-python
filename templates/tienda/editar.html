@@ -1,0 +1,36 @@
+{% extends 'tienda/index.html' %}
+
+
+{% block texto %}
+<!-- 
+<form method='POST'>
+    {% csrf_token %}
+    {{form}}
+    <button>Enviar</button>
+    <a href="{% url 'index' %}">Volver</a>
+</form> -->
+
+<div class="container-fluid w-75">
+    <h2 class="">Datos</h2>
+    <form method="POST">
+      {% csrf_token %}
+      <div class="form-group mt-2">
+        <label for="nombre">nombre:</label>
+        {{form.nombre}}
+      </div>
+      <div class="form-group mt-2">
+        <label for="precio">Precio:     </label>
+        {{form.precio}}
+      </div>
+      <div class="mt-2">
+        <label for="cantidad">Cantidad:</label>
+        {{form.cantidad}}
+      </div>
+    <div class="conteiner-fluid">
+      <button type="submit" class="btn btn-primary mt-2">Editar</button>
+    </form>
+    <button class="btn btn-primary border-dark mt-2"><a class="text-white" href="{% url 'index' %}">Volver</a></button>
+    </div>
+</div>
+
+{% endblock %}
